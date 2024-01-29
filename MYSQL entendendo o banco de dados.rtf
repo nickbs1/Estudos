@@ -1,0 +1,148 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1046{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green77\blue187;\red255\green0\blue0;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\f0\fs96\lang22 MYSQL\par
+
+\pard\sa200\sl276\slmult1\cf1\fs32 Parte I\cf0\par
+1.Para come\'e7ar a entender o MYSQL precisa baixar MySQL Workbench.\par
+------------------------------------------------------------------------------\par
+2.Criando um banco de dados= (create database (/nome do banco de dados ;/). exemplo1:create database cadastro.\par
+Obs:Neste exemplo criei um banco de dados chamado cadastro.\par
+--------------------------------------------------------------------------------\par
+
+\pard\sa200\sl240\slmult1 3.criando tabelas=(create table nome da tabela().). exemplo1:create table pessoas();\par
+Obs:Neste exemplo criei uma tabela chamada pessoas.\par
+--------------------------------------------------------------------------------\par
+4.describe (nome da tabela)=descreve o que esta na tabela.\par
+exemplo1:describe pessoas;\par
+\cf1 ParteII\cf0\par
+5.dentro do terminal: \par
+\fs28 a-show database;=mostra os bancos de dados criados.\par
+b-use (nome do banco de dados);=acessa  o banco de dados selecionado.\par
+c-status; =mostra qual banco de dados se esta selecionado.\par
+d- show tables;=mostra todas as tabelas\cf2 .\par
+\cf0 ----------------------------------------------------------------------------------------- \cf2\par
+\cf0\fs32\par
+6.drop database (nome do banco de dados);=apaga um banco de dados.exemplo2:drop database cadastro.\par
+Obs:Neste exemplo foi apagado o banco de dados com o nome de cadastro.\par
+------------------------------------------------------------------------------------\par
+7.criar um banco de dados com utf8 resumindo de acordo com o teclado do brasil:\par
+create database cadastro\par
+default character set utf8mb4\par
+default collate utf8mb4_general_ci;\par
+------------------------------------------------------------------------------------\par
+8.criar uma tabela em um banco de dados:\par
+create table pessoas(\par
+id int not null auto_increment,\par
+nome varchar(20) not null,\par
+nascimento date,\par
+sexo enum('M','F'),\par
+peso decimal(3,2),\par
+altura decimal(3,2),\par
+nacionalidade varchar(20) default 'brasil',\par
+primary key (id)\par
+) default charset utf8mb4;\par
+tabela primaria do curso em video aula 04.\par
+------------------------------------------------------------------------------------\par
+9.Quando se usa variaveis tipo inteiro no MYSQL:\par
+TINYINT:\par
+Faixa de valores: -128 a 127 (signed) ou 0 a 255 (unsigned). Utiliza\'e7\'e3o: Ideal para armazenar valores pequenos, economizando espa\'e7o de armazenamento quando a precis\'e3o \'e9 menos cr\'edtica.\par
+SMALLINT:\par
+Faixa de valores: -32,768 a 32,767 (signed) ou 0 a 65,535 (unsigned).Utiliza\'e7\'e3o: Recomendado para armazenar n\'fameros inteiros maiores que o TINYINT, mas ainda economizando espa\'e7o em compara\'e7\'e3o com os tipos maiores.\par
+MEDIUMINT:\par
+Faixa de valores: -8,388,608 a 8,388,607 (signed) ou 0 a 16,777,215 (unsigned).Utiliza\'e7\'e3o: Adequado quando voc\'ea precisa de um intervalo maior do que o SMALLINT, mas ainda deseja economizar espa\'e7o em compara\'e7\'e3o com o INT ou BIGINT.\par
+INT:\par
+Faixa de valores: -2,147,483,648 a 2,147,483,647 (signed) ou 0 a 4,294,967,295 (unsigned).Utiliza\'e7\'e3o: Um tipo de dados comum para armazenar n\'fameros inteiros. Apropriado para a maioria das situa\'e7\'f5es.\par
+BIGINT:\par
+Faixa de valores: -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807 (signed) ou 0 a 18,446,744,073,709,551,615 (unsigned).Utiliza\'e7\'e3o: Usado quando voc\'ea precisa de uma faixa de valores extremamente grande, como para armazenar identificadores \'fanicos globais ou valores que podem crescer muito.\par
+------------------------------------------------------------------------------------\par
+10.Quando se trata de ponto flutuante no MYSQL:\par
+\par
+DECIMAL:\par
+O tipo DECIMAL \'e9 utilizado para armazenar n\'fameros de ponto flutuante com precis\'e3o fixa.\'c9 uma escolha comum quando a precis\'e3o exata \'e9 crucial, como em opera\'e7\'f5es financeiras.Voc\'ea especifica a precis\'e3o e a escala, onde a precis\'e3o \'e9 o n\'famero total de d\'edgitos e a escala \'e9 o n\'famero de d\'edgitos ap\'f3s o ponto decimal. EXEMPLO decima(3,2); pode ocupar ate 3 casas e 2 depois da virgula.\par
+FLOAT:\par
+O tipo FLOAT \'e9 utilizado para representar n\'fameros de ponto flutuante de precis\'e3o simples.\'c9 mais eficiente em termos de espa\'e7o em compara\'e7\'e3o com DOUBLE, mas pode ter pequenas imprecis\'f5es.\par
+DOUBLE:\par
+O tipo DOUBLE \'e9 utilizado para representar n\'fameros de ponto flutuante de dupla precis\'e3o.Oferece maior precis\'e3o do que FLOAT, mas ocupa mais espa\'e7o de armazenamento.\par
+imagen para entender os tipos primitivos:\par
+{{\field{\*\fldinst{HYPERLINK https://image.slidesharecdn.com/04-melhorandobancodedados-160606144337/95/curso-mysql-04-melhorando-banco-de-dados-6-638.jpg?cb=1465224604 }}{\fldrslt{https://image.slidesharecdn.com/04-melhorandobancodedados-160606144337/95/curso-mysql-04-melhorando-banco-de-dados-6-638.jpg?cb=1465224604\ul0\cf0}}}}\f0\fs32\par
+------------------------------------------------------------------------------------\par
+11.\par
+a-DDL (Data Definition Language) Em MySQL refere-se \'e0s instru\'e7\'f5es SQL usadas para definir, modificar e excluir estruturas de banco de dados, como tabelas, \'edndices e vistas. \par
+b-DML (Data Manipulation Language):Inclui comandos que manipulam dados armazenados em um banco de dados. Os principais comandos DML s\'e3o:\par
+SELECT: Recupera dados de uma ou mais tabelas.\par
+INSERT: Insere novos registros em uma tabela.\par
+UPDATE: Modifica dados existentes em uma tabela.\par
+DELETE: Remove registros de uma tabela.\par
+c-DQL (Data Query Language):\'c9 uma subcategoria do DML e \'e9 usado exclusivamente para consultas. O principal comando DQL \'e9:\par
+SELECT: Recupera dados de uma ou mais tabelas.\par
+d-DCL (Data Control Language):Lida com privil\'e9gios e controles de acesso ao banco de dados. Os principais comandos DCL s\'e3o:\par
+GRANT: Concede privil\'e9gios de acesso a usu\'e1rios ou pap\'e9is.\par
+REVOKE: Revoga privil\'e9gios concedidos anteriormente.\par
+e-TCL (Transaction Control Language):Lida com transa\'e7\'f5es no banco de dados. Os principais comandos TCL s\'e3o:\par
+COMMIT: Confirma as altera\'e7\'f5es feitas em uma transa\'e7\'e3o.\par
+ROLLBACK: Desfaz as altera\'e7\'f5es feitas em uma transa\'e7\'e3o.\par
+SAVEPOINT: Define um ponto no qual uma transa\'e7\'e3o pode ser revertida.\par
+SET TRANSACTION: Configura caracter\'edsticas de uma transa\'e7\'e3o.\par
+f-DQL (Data Query Language):Embora "DQL" seja frequentemente associado \'e0 linguagem de consulta de dados (SELECT), tamb\'e9m pode ser usado para se referir a "Data Query Language". Portanto, voc\'ea pode encontrar essa categoria, que engloba os comandos usados para consultar dados.\par
+------------------------------------------------------------------------------------\par
+12.Inserindo valores no banco de dados\par
+\cf2 a-primeiro jeito\par
+\cf0 insert into pessoas\par
+(nome,nascimento,altura,peso,nacionalidade,sexo)\par
+values\par
+('arthur' ,'2004-05-05' ,'1.7' ,'7' ,'polon\'eas' ,'M');\par
+e para ver o banco de dados com os valores:\par
+select*from pessoas;\par
+\cf2 b- segundo jeito\cf0\par
+so \'e9 ultilizado seguindo a ordem da coluna que estar dentro da tabela.\par
+insert into pessoas values\par
+(default,'julio','2006-03-06','M','1.65','80.53','Portugues');\par
+select*from pessoas;\par
+\cf2 c-terceiro jeito\par
+\cf0 para inserir varios valores ao mesmo tempo.\par
+insert into pessoas values\par
+(default,'genivaldo','2006-03-06','M','1.65','80.53','Portugues'),\par
+(default,'carlos','2006-03-06','M','1.65','80.53','Portugues'),\par
+(default,'carlinhos','2006-03-06','M','1.65','80.53','Portugues');\par
+select*from pessoas;\par
+\cf2 Obs:select*from pessoas;= serve pra ver as informa\'e7\'f5es da tabela no caso de pessoas.\cf0\par
+------------------------------------------------------------------------------------\par
+13.alterar uma tabela e adicionar uma coluna:\par
+alter table pessoas\par
+add column profiss\'e3o varchar(20);\par
+aqui adicionei uma coluna com nome de profiss\'e3o.\par
+\cf2\tab Para alterar uma tabela e excluir uma coluna: \par
+\cf0 alter table pessoas\par
+drop column profiss\'e3o;\par
+aqui exclui o nome de uma coluna que tinha o nome de profiss\'e3o.\par
+\cf2\tab para adicionar uma coluna em qualquer posi\'e7\'e3o:\par
+\cf0 alter table pessoas\par
+add column profiss\'e3o varchar(20) after nome;\par
+no exemplo se tem uma coluna com o nome de nome o que foi feito ent\'e3o foi que adicionei uma coluna chamada profiss\'e3o depois da palavra nome.\par
+\tab\cf2 Para adiconar uma coluna na primeira posi\'e7\'e3o:\par
+\cf0 alter table pessoas\par
+add column investimento decimal(5,2) first;\par
+eu adicionei a coluna que se chama investimento na primeira posi\'e7\'e3o.\par
+------------------------------------------------------------------------------------\par
+14.Modificando o tipo primitivo de uma coluna:\par
+alter table pessoas\par
+modify column peso decimal(8,2);\par
+neste caso o peso era float foi alterado para decimal com 8 casas e 2 depois da virgula.\par
+\cf2 Modificando o nome da coluna:\par
+\cf0 alter table pessoas\par
+change column nascinalidade nacionalidade varchar(20);\par
+o nome nascinalidade que foi escrito errado foi modificado para nacionalidade.\par
+\cf2 Modificando o nome da tabela:\par
+\cf0 alter table pessoas\par
+rename to clientes;\par
+alterei o nome da tabela de pessoas agora se chama clientes.\par
+------------------------------------------------------------------------------------\par
+15-\par
+\par
+\par
+\par
+\par
+\fs96\par
+}
+ 
