@@ -158,8 +158,10 @@ echo"sua cidade \'e9,$cidade \\u\{1F44D\}";\par
  \par
  <?php \par
 $n = $_GET["nome"] ?? "sem nome";\par
-$sn = $_GET["sobrenome"] ?? "desconhecido";\par
-echo"\'e9 um prazer te conhecer $n $sn.";\par
+\cf2 //se n\'e3o existir o metodo get nome fica sem nome.\par
+\cf1 $sn = $_GET["sobrenome"] ?? "desconhecido";\par
+\cf2 //se n\'e3o existir o metodo get sobrenome fica desconhecido.\par
+\cf1 echo"\'e9 um prazer te conhecer $n $sn.";\par
 ?>\par
 <a href="formulario.html">pagina anterior.</a>\par
 \par
@@ -213,35 +215,57 @@ arquivo html:\par
 </form>\par
 \par
 arquivo php\par
-\cf2\par
-<!DOCTYPE html>\par
-<html lang="pt-br">\par
+\cf2 <!DOCTYPE html>\par
+<html lang="en">\par
 <head>\par
     <meta charset="UTF-8">\par
     <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
-    <title>Des</title>\par
+    <title>Document</title>\par
 </head>\par
 <body>\par
- <h1>aprendendo</h1>\par
+<?php \par
+$n=$_REQUEST["numero"];\par
+$a=$n-1;\par
+$s=$n+1;\par
 \par
- <form action="desafio.php" method="get">\par
-<label for="number">numero</label>\par
-<input type="number" name="numero" id="idnumero">\par
-<input type="submit" value="calcular">\par
-</form>\par
-    \par
-\par
-\par
-</body>\par
+echo"o numero digitado $n <br> o antecessor \'e9 $a <br> o sucessor $s.";\par
+?>\par
+<br>\par
+<button onclick="javascript:history.go(-1)">voltar</button>\par
+\cf0 //este comando cria um bot\'e3o que volta para pagina anterior.    \par
+\cf2 </body>\par
 </html>\par
-    \par
-\par
-\par
-</body>\par
-</html>\par
+\cf1\par
+\cf2\par
 \cf0 --------------------------------------------------------------------------------------\par
-12-\cf2\par
+12-Gerador de numeros aleatorios.\par
 \par
+\cf1 <!DOCTYPE html>\par
+<html lang="pt-br">\par
+<head>\par
+    <link rel="stylesheet" href="estilo1.css">\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Gerador</title>\par
+</head>\par
+<body>\par
+<main>\par
+<?php \par
+$min=0;\par
+$max=105;\par
+$ger=mt_rand($min,$max);\par
+\cf2 //mt_rand(); gera numeros aleatorios\par
+\cf1 echo"<h1>numero aleatorio entre $min e $max </h1>";\par
+echo"<br> <strong> Valor gerado:$ger              </strong> ";\par
+?>\par
+\par
+<button onclick="javasccript:document.location.reload()">Gerar</button>\par
+\cf2 //esse bot\'e3o recarrega a pagina.\par
+\cf1 </main>    \par
+    \par
+</body>\par
+</html>\par
+\cf2\par
 \par
 \b\par
 \par
